@@ -5,5 +5,5 @@
     $productType = new ReflectionClass($productTypeString);
     $productTypeInstance = $productType->newInstance(); 
     $controller = new ProductController();  
-    $controller->addProduct($productTypeInstance, "jvc202", "Chair", 200, 24, 45, 15); 
+    $controller->addProduct($productTypeInstance, "jvc205", "ACME Disc", 2, 300); 
 

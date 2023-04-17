@@ -7,6 +7,3 @@ if (isset($_POST['skus'])) {
   $productController->massDelete($skus);
 }
 
-
-header("Location: ../index.php");
-exit(); 

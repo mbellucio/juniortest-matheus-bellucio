@@ -7,7 +7,7 @@
   $query = $view->showAllProducts(); 
 ?>
 
-<form action="includes/massdelete.inc.php" method="post">
+<form method="post" id="delete-form">
   <div class="container">
     <div class="row align-items-end">
         <div class="col">
@@ -28,7 +28,7 @@
     <div class="row">
       <?php foreach ($query as $product): ?>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card">
+          <div class="card product-card">
             <div class="container checkbox-container">
               <input type="checkbox" name="skus[]" class="delete-checkbox" value="<?php echo $product['products_sku'] ?>">
             </div>
@@ -44,6 +44,8 @@
     </div>
   </div>
 </form>
+
+<script src="scripts/massdelete.script.js"></script>
 
 <?php
   include "includes/footer.inc.php";     
