@@ -35,6 +35,7 @@
       <div class="col-12 form-row">
         <h5 class="form-label">Price ($)</h5>
         <input type="text" class="form-control form-default-input" placeholder="define price" id="price">
+        <span id="price-feedback"></span>
       </div>
       <div class="col-12 form-row">
         <h5 class="form-label">Type Switcher</h5>
@@ -44,13 +45,14 @@
           <option value="BookView" id="Furniture" >Book</option>
           <option value="FurnitureView" id="Book">Furniture</option>
         </select>
+        <span id="productType-feedback"></span>
       </div>
     </div>
   </div>
 
 </form>
 
-<!-- <script src="scripts/formselect.script.js"></script> -->
+<script src="scripts/formselect.script.js"></script>
 <script src="scripts/formvalidation.script.js"></script>
 
 <?php

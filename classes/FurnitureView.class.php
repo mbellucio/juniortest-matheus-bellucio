@@ -12,7 +12,7 @@ class FurnitureView extends Product implements ProductViewInterface {
     $html .= '<input type="text" class="form-control form-default-input" placeholder="width" aria-label="NAME" id="width">'; 
     $html .= '</div>';
     $html .= '<div class="col-12 form-row additional-form">';
-    $html .= '<h5 class="form-label">Length(cm)</h5>'; 
+    $html .= '<h5 class="form-label">Length (cm)</h5>'; 
     $html .= '<input type="text" class="form-control form-default-input" placeholder="length" aria-label="NAME" id="length">'; 
     $html .= '</div>';
     $html .= '<p class="guidance-msg">Please provide the furniture measurements in centimeters (cm)</p>';
