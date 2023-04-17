@@ -76,7 +76,11 @@ abstract class Product extends Dbh{
     $stmt->execute([$sku]);
   
     $result = $stmt->fetchColumn();
-    return ($result > 0);
+    if ($result > 0) {
+      return true;
+    } else {
+      return false; 
+    }
   }
 }
 

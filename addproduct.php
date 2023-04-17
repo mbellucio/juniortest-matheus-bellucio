@@ -1,10 +1,8 @@
 <?php
-  include "includes/header.inc.php";   
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);   
+  include "includes/header.inc.php";      
 ?>
 
-<form action="addproduct.inc.php" method="post" id="product_form" onkeydown="return event.key != 'Enter';">
+<form method="post" id="product_form" onkeydown="return event.key != 'Enter';">
 
   <div class="container">
     <div class="row align-items-end">
@@ -27,6 +25,7 @@
       <div class="col-12 form-row">
         <h5 class="form-label">Product SKU</h5>
         <input type="text" class="form-control form-default-input" placeholder="type sku" aria-label="SKU" id="sku">
+        <span id="sku-feedback"></span>
       </div>
       <div class="col-12 form-row">
         <h5 class="form-label">Product Name</h5>
@@ -50,10 +49,12 @@
 
 </form>
 
-<script src="scripts/formselect.script.js"></script>
+<!-- <script src="scripts/formselect.script.js"></script> -->
+<script src="scripts/formvalidation.script.js"></script>
 
 <?php
   include "includes/footer.inc.php";     
 ?>
+
 
 

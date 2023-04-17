@@ -13,4 +13,6 @@ if (isset($_POST['productType'])) {
   echo $html;
 }
 
+exit();
+
 
