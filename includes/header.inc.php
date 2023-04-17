@@ -22,3 +22,5 @@
 <div class="header-box">
   <h2 class="header-text">MATHEUS BELLUCIO'S TEST ASSIGNMENT</h2>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -51,24 +51,23 @@
 </form>
 
 <script>
-  const form = document.getElementById('form-box');
-  const select = document.getElementById('productType');
-
-  select.addEventListener('change', function() {
-    console.log('working EL')
-    const productType = select.value;
-    console.log(productType)
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'includes/typeformgen.inc.php');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-      // Add the generated HTML code to the form
-      form.insertAdjacentHTML('beforeend', xhr.responseText);
-    }
-  };
-  xhr.send(`productType=${productType}`);
+  $(document).ready(function() {
+  $('#productType').on('change', function() {
+    const productType = $(this).val();
+  
+    $.ajax({
+      url: 'includes/typeformgen.inc.php',
+      type: 'POST',
+      data: {
+        productType: productType
+      },
+      success: function(response) {
+        $('.additional-form').remove();
+        $('.guidance-msg').remove(); 
+        $('#form-box').append(response);
+      },
+    });
+  });
 });
 </script>
 
