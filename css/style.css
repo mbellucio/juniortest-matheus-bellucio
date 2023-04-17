@@ -141,5 +141,7 @@ body {
   margin-bottom: 0% !important;
 }
 
-
-
+form span {
+  color: #ce5959;
+  padding-left: 10px;
+}

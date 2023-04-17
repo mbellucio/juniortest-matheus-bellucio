@@ -24,16 +24,17 @@
     <div class="row" id="form-box">
       <div class="col-12 form-row">
         <h5 class="form-label">Product SKU</h5>
-        <input type="text" class="form-control form-default-input" placeholder="type sku" aria-label="SKU" id="sku">
+        <input type="text" class="form-control form-default-input" placeholder="type sku" id="sku">
         <span id="sku-feedback"></span>
       </div>
       <div class="col-12 form-row">
         <h5 class="form-label">Product Name</h5>
-        <input type="text" class="form-control form-default-input" placeholder="type name" aria-label="NAME" id="name">
+        <input type="text" class="form-control form-default-input" placeholder="type name" id="name">
+        <span id="name-feedback"></span>
       </div>
       <div class="col-12 form-row">
         <h5 class="form-label">Price ($)</h5>
-        <input type="text" class="form-control form-default-input" placeholder="define price" aria-label="NAME" id="price">
+        <input type="text" class="form-control form-default-input" placeholder="define price" id="price">
       </div>
       <div class="col-12 form-row">
         <h5 class="form-label">Type Switcher</h5>

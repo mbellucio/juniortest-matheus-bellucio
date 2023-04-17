@@ -10,9 +10,8 @@ class ProductController extends Product{
     $this->deleteProducts(); 
   }
 
-  public function skuExists($sku) {
-    $result = $this->skuExists($sku);
-    return $result;
+  public function checkSku($sku) {
+    return $this->skuExists($sku);
   }
 }
 

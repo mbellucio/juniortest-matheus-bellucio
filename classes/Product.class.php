@@ -71,7 +71,7 @@ abstract class Product extends Dbh{
   }
 
   protected function skuExists($sku) {
-    $sql = "SELECT COUNT(*) FROM products WHERE products_sku = ?";
+    $sql = "SELECT * FROM products WHERE products_sku = ?";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$sku]);
   

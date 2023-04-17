@@ -4,6 +4,6 @@ include "class-autoloader.inc.php";
 
   $sku = $_POST['sku']; 
   $productController = new ProductController();
-  $result = $productController->skuExists($sku); 
+  $result = $productController->checkSku($sku); 
   echo $result; 
 
