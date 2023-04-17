@@ -1,0 +1,122 @@
+/* ================== Color Pallete ================= */
+/* light = #EDE4E0 */
+/* heavy = #0E5E6F */
+/* medium = #3A8891 */
+
+/* ================== Body ================= */
+body {
+  font-family: Roboto;
+  background-color: #ede4e0;
+  justify-content: center;
+}
+
+/* ================== Header ================= */
+.header-box {
+  padding: 10px;
+  background-color: #0e5e6f;
+  display: flex;
+  justify-content: center;
+}
+
+.header-text {
+  color: #ede4e0;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* ================== Footer ================= */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  display: block;
+  font-weight: bold;
+  padding-top: 15px;
+  color: #0e5e6f;
+}
+
+.footer-end {
+  height: 30px;
+  background-color: #0e5e6f;
+  display: block;
+}
+
+/* ================== Product Card ================= */
+.card {
+  margin: 20px;
+  background-color: black !important;
+}
+
+.card-body {
+  text-align: center;
+  background-color: black !important;
+}
+
+.delete-checkbox {
+  padding: 20px;
+}
+
+.product-property {
+  margin: 0;
+}
+
+.checkbox-container {
+  padding: 7px;
+  background-color: #0e5e6f;
+}
+
+/* ================== Page Title ================= */
+.page-title {
+  color: #0e5e6f;
+  margin: 0;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+/* ================== Buttons ================= */
+.btn-box {
+  vertical-align: bottom;
+}
+
+.menu-buttons {
+  background-color: #0e5e6f !important;
+  margin: 0 10px 0 10px !important;
+  color: #ede4e0 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-buttons:hover {
+  background-color: #ede4e0 !important;
+  color: #0e5e6f !important;
+  box-shadow: 0px 0px 10px #0e5e6f;
+}
+
+.menu-buttons:active {
+  background-color: #0e5e6f !important;
+  color: #ede4e0 !important;
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+/* ================== CheckBox ================= */
+
+/* ================== HR ================= */
+.rule-box {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+.rule {
+  width: 80%;
+  display: inline-block;
+  border: 1px solid #0e5e6f;
+  box-shadow: 0 0 10px #0e5e6f;
+  margin: 0;
+}
