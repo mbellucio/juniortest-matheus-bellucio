@@ -7,7 +7,7 @@
   $query = $view->showAllProducts(); 
 ?>
 
-<form action="addproduct.php">
+<form action="includes/massdelete.inc.php" method="post">
   <div class="container">
     <div class="row align-items-end">
         <div class="col">
@@ -15,7 +15,7 @@
         </div>
         <div class="col btn-box text-end">
           <a type="button" class="menu-buttons btn btn-dark" href="addproduct.php">ADD</a>
-          <button type="button" class="menu-buttons btn btn-dark">MASS DELETE</button>
+          <button type="submit" class="menu-buttons btn btn-dark">MASS DELETE</button>
         </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="card">
             <div class="container checkbox-container">
-              <input type="checkbox" class="delete-checkbox">
+              <input type="checkbox" name="skus[]" class="delete-checkbox" value="<?php echo $product['products_sku'] ?>">
             </div>
             <div class="card-body">
               <h5 class="card-title product-property"><?= $product['products_sku'] ?></h5>
@@ -44,7 +44,9 @@
     </div>
   </div>
 </form>
+
 <?php
   include "includes/footer.inc.php";     
 ?>
+
 

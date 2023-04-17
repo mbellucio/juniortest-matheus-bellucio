@@ -5,6 +5,7 @@ abstract class Product extends Dbh{
   private $name; 
   private $price;
   private $productAttribute; 
+  private $productsToDelete; 
 
   protected function getSku() {
     return $this->sku; 
@@ -38,6 +39,14 @@ abstract class Product extends Dbh{
     $this->productAttribute = $productAttribute; 
   }
 
+  protected function getProductsToDelete() {
+    return $this->productsToDelete; 
+  }
+
+  protected function setProductsToDelete( array $productsToDelete) {
+    $this->productsToDelete = $productsToDelete; 
+  }
+
   protected function fechtAllProducts() {
     $sql = "SELECT * FROM products";
     $stmt = $this->connect()->prepare($sql);
@@ -51,6 +60,14 @@ abstract class Product extends Dbh{
     $sql = "INSERT INTO products (products_sku, products_name, products_price, products_attribute) VALUES (?, ?, ?, ?)";
     $stmt = $this->connect()->prepare($sql); 
     $stmt->execute([$this->getSku(), $this->getName(), $this->getPrice(), $this->getProductAttribute()]); 
+  }
+
+  protected function deleteProducts() {
+    foreach($this->getProductsToDelete() as $product) {
+      $sql = "DELETE FROM products WHERE products_sku = ?";
+      $stmt = $this->connect()->prepare($sql); 
+      $stmt->execute([$product]);
+    }
   }
 }
 

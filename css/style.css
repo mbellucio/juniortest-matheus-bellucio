@@ -48,12 +48,10 @@ body {
 /* ================== Product Card ================= */
 .card {
   margin: 20px;
-  background-color: black !important;
 }
 
 .card-body {
   text-align: center;
-  background-color: black !important;
 }
 
 .delete-checkbox {
