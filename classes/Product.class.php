@@ -69,5 +69,14 @@ abstract class Product extends Dbh{
       $stmt->execute([$product]);
     }
   }
+
+  protected function skuExists($sku) {
+    $sql = "SELECT COUNT(*) FROM products WHERE products_sku = ?";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$sku]);
+  
+    $result = $stmt->fetchColumn();
+    return ($result > 0);
+  }
 }
 
