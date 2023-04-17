@@ -5,5 +5,10 @@ class ProductView extends Product {
     $result = $this->fechtAllProducts(); 
     return $result; 
   }
+
+  public function handleForm(ProductViewInterface $productType) {
+    $html = $productType->generateForm(); 
+    echo $html; 
+  }
 }
 
