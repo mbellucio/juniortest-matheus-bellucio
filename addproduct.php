@@ -2,7 +2,7 @@
   include "includes/header.inc.php";      
 ?>
 
-<form method="post" id="product_form" onkeydown="return event.key != 'Enter';">
+<form method="post" id="product_form" onkeydown="return event.key != 'Enter';" novalidate>
 
   <div class="container">
     <div class="row align-items-end">
@@ -34,7 +34,7 @@
       </div>
       <div class="col-12 form-row">
         <h5 class="form-label">Price ($)</h5>
-        <input type="text" class="form-control form-default-input" placeholder="define price" id="price">
+        <input type="number" class="form-control form-default-input" placeholder="define price" id="price">
         <span id="price-feedback"></span>
       </div>
       <div class="col-12 form-row">

@@ -72,7 +72,7 @@ $(document).ready(function () {
         feedback(id, priceFormat);
         formIsValid = false;
       } else {
-        value = parseFloat(value).toFixed(2);
+        value = Number(value);
         removeFeedback(id);
       }
     }
