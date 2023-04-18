@@ -63,11 +63,11 @@ abstract class Product extends Dbh{
   }
 
   protected function deleteProducts() {
-    foreach($this->getProductsToDelete() as $product) {
-      $sql = "DELETE FROM products WHERE products_sku = ?";
-      $stmt = $this->connect()->prepare($sql); 
-      $stmt->execute([$product]);
-    }
+    $productsToDelete = $this->getProductsToDelete();
+    $placeholders = implode(',', array_fill(0, count($productsToDelete), '?'));
+    $sql = "DELETE FROM products WHERE products_sku IN ($placeholders)";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute($productsToDelete);
   }
 
   protected function skuExists($sku) {
