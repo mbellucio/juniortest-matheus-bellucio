@@ -5,13 +5,12 @@
 <footer>
 
   <div class="footer">
-    <div class="rule-box">
-      <hr class="rule">
-      <span class="footer-text" >Scandiweb test assignment</span>
+    <div class="footer-end container-fluid">
+      <span class="footer-text">Scandiweb test assignment</span>
     </div>
-    <div class="footer-end"></div>
   </div>
 
 </footer>
 
 </html>
+

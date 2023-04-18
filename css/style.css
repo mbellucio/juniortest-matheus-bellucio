@@ -30,17 +30,19 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
+  text-align: center;
 }
 
 .footer-text {
-  display: block;
+  display: inline-block;
   font-weight: bold;
   padding-top: 15px;
-  color: #0e5e6f;
+  color: #ede4e0;
+  font-size: 20px;
 }
 
 .footer-end {
-  height: 30px;
+  height: 60px;
   background-color: #0e5e6f;
   display: block;
 }
@@ -82,9 +84,17 @@ body {
 
 .menu-buttons {
   background-color: #0e5e6f !important;
-  margin: 0 10px 0 10px !important;
+  margin: 10px 10px 0 10px !important;
   color: #ede4e0 !important;
   transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 1350px) {
+  .menu-buttons {
+    font-size: 12px !important;
+    margin: 5px 5px 0 5px !important;
+    padding: 3px 6px !important;
+  }
 }
 
 .menu-buttons:hover {
@@ -119,6 +129,12 @@ body {
   margin: 0;
 }
 
+@media (max-width: 1350px) {
+  .rule {
+    width: 95%;
+  }
+}
+
 /* ================== Addproduct form ================= */
 .form-default-input {
   width: 300px !important;
@@ -135,7 +151,7 @@ body {
 }
 
 .form-label {
-  padding: 0 10px 0 10px;
+  padding: 0 10px 10px 10px;
   width: 200px !important;
   display: inline-block;
   margin-bottom: 0% !important;
