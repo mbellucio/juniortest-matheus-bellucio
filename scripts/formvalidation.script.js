@@ -23,7 +23,7 @@ $(document).ready(function () {
     const priceFormat = "this field must be a number e.g. 1, 1.5, 2.5 ...";
     const optionNotSelected = "You must select an option";
 
-    //style validation code
+    //style validation function
     function feedback(id, text) {
       $(id).addClass("is-invalid");
       $(`${id}-feedback`).text(text);
@@ -63,17 +63,22 @@ $(document).ready(function () {
       removeFeedback("#name");
     }
 
-    // price validation
-    if (price === "") {
-      feedback("#price", emptyField);
-      formIsValid = false;
-    } else if (!$.isNumeric(price)) {
-      feedback("#price", priceFormat);
-      formIsValid = false;
-    } else {
-      price = parseFloat(price).toFixed(2);
-      removeFeedback("#price");
+    // numeric values validation function
+    function validateNumeric(value, id) {
+      if (value === "") {
+        feedback(id, emptyField);
+        formIsValid = false;
+      } else if (!$.isNumeric(value)) {
+        feedback(id, priceFormat);
+        formIsValid = false;
+      } else {
+        value = parseFloat(value).toFixed(2);
+        removeFeedback(id);
+      }
     }
+
+    // price validation
+    validateNumeric(price, "#price");
 
     //select validation
     if (productType === null) {
@@ -83,30 +88,12 @@ $(document).ready(function () {
       switch (productType) {
         case "DvdView":
           size = $("#size").val();
-          if (size === "") {
-            feedback("#size", emptyField);
-            formIsValid = false;
-          } else if (!$.isNumeric(size)) {
-            feedback("#size", priceFormat);
-            formIsValid = false;
-          } else {
-            size = parseFloat(size).toFixed(2);
-            removeFeedback("#size");
-          }
+          validateNumeric(size, "#size");
           break;
 
         case "BookView":
           weight = $("#weight").val();
-          if (weight === "") {
-            feedback("#weight", emptyField);
-            formIsValid = false;
-          } else if (!$.isNumeric(weight)) {
-            feedback("#weight", priceFormat);
-            formIsValid = false;
-          } else {
-            weight = parseFloat(weight).toFixed(2);
-            removeFeedback("#weight");
-          }
+          validateNumeric(weight, "#weight");
           break;
 
         case "FurnitureView":
@@ -117,16 +104,7 @@ $(document).ready(function () {
           const furnPropsIds = ["#height", "#width", "#length"];
           furnProps.forEach(function (property, index) {
             const propertyId = furnPropsIds[index];
-            if (property === "") {
-              feedback(propertyId, emptyField);
-              formIsValid = false;
-            } else if (!$.isNumeric(property)) {
-              feedback(propertyId, priceFormat);
-              formIsValid = false;
-            } else {
-              property = parseFloat(property).toFixed(2);
-              removeFeedback(propertyId);
-            }
+            validateNumeric(property, propertyId);
           });
           break;
       }
