@@ -42,6 +42,7 @@ $(document).ready(function () {
       $.ajax({
         url: "includes/checksku.inc.php",
         type: "POST",
+        async: false,
         data: { sku: sku },
         success: function (response) {
           if (response == true) {
