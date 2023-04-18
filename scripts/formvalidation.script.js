@@ -85,32 +85,31 @@ $(document).ready(function () {
       feedback("#productType", optionNotSelected);
       formIsValid = false;
     } else {
-      switch (productType) {
-        case "classes\\model\\Dvd":
-          size = $("#size").val();
-          validateNumeric(size, "#size");
-          properties.push(size);
-          break;
-
-        case "classes\\model\\Book":
-          weight = $("#weight").val();
-          validateNumeric(weight, "#weight");
-          properties.push(weight);
-          break;
-
-        case "classes\\model\\Furniture":
-          height = $("#height").val();
-          width = $("#width").val();
-          length = $("#length").val();
-          const furnProps = [height, width, length];
-          const furnPropsIds = ["#height", "#width", "#length"];
-          furnProps.forEach(function (property, index) {
-            const propertyId = furnPropsIds[index];
-            validateNumeric(property, propertyId);
-            properties.push(property);
-          });
-          break;
+      size = $("#size").val();
+      if (size !== undefined) {
+        validateNumeric(size, "#size");
+        properties.push(size);
       }
+
+      weight = $("#weight").val();
+      if (weight !== undefined) {
+        validateNumeric(weight, "#weight");
+        properties.push(weight);
+      }
+
+      height = $("#height").val();
+      width = $("#width").val();
+      length = $("#length").val();
+      if (height !== undefined && width !== undefined && length !== undefined) {
+        const furnProps = [height, width, length];
+        const furnPropsIds = ["#height", "#width", "#length"];
+        furnProps.forEach(function (property, index) {
+          const propertyId = furnPropsIds[index];
+          validateNumeric(property, propertyId);
+          properties.push(property);
+        });
+      }
+
       removeFeedback("#productType");
     }
     const paramsString = JSON.stringify(properties);
