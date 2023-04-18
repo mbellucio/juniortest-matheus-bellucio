@@ -8,7 +8,7 @@ $(document).ready(function () {
     const name = $("#name").val();
     const sku = $("#sku").val();
     let price = $("#price").val();
-    const productType = $("#productType").val();
+    let productType = $("#productType").val();
     const properties = [];
     let weight;
     let size;
@@ -89,11 +89,15 @@ $(document).ready(function () {
         case "DvdView":
           size = $("#size").val();
           validateNumeric(size, "#size");
+          productType = "DvdController";
+          properties.push(size);
           break;
 
         case "BookView":
           weight = $("#weight").val();
           validateNumeric(weight, "#weight");
+          productType = "BookController";
+          properties.push(weight);
           break;
 
         case "FurnitureView":
@@ -105,11 +109,29 @@ $(document).ready(function () {
           furnProps.forEach(function (property, index) {
             const propertyId = furnPropsIds[index];
             validateNumeric(property, propertyId);
+            properties.push(property);
           });
+          productType = "FurnitureController";
           break;
       }
       removeFeedback("#productType");
     }
-    console.log(formIsValid);
+    const paramsString = JSON.stringify(properties);
+    if (formIsValid) {
+      $.ajax({
+        url: "includes/submitform.inc.php",
+        type: "POST",
+        data: {
+          sku: sku,
+          name: name,
+          price: price,
+          properties: paramsString,
+          productType: productType,
+        },
+        success: function () {
+          window.location.href = "index.php";
+        },
+      });
+    }
   });
 });

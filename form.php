@@ -7,11 +7,15 @@
 </head>
 
 <body> 
-  <form action="test.php" method="post">
-    <select name="producttype">
+  <form action="includes/submitform.inc.php" method="post">
+    <select name="productType">
       <option value="BookController">Book</option>
       <option value="DvdController">DVD</option>
       <option value="FurnitureController">Furniture</option>
+      <input type="text" placeholder="sku" name="sku">
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="price" name="price">
+      <input type="text" placeholder="props" name="properties">
     </select>
     <button type="submit" name="submit">Submit</button>
   </form>

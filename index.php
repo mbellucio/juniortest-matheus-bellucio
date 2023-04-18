@@ -7,7 +7,7 @@
   $query = $view->showAllProducts(); 
 ?>
 
-<form method="post" id="delete-form">
+<form method="post" id="delete-form" onkeydown="return event.key != 'Enter';">
   <div class="container">
     <div class="row align-items-end">
         <div class="col">
