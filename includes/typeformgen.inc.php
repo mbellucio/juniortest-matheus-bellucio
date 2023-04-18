@@ -7,7 +7,7 @@ if (isset($_POST['productType'])) {
   $productType = new ReflectionClass($productTypeString);
   $productTypeInstance = $productType->newInstance();
   
-  $view = new ProductView();
+  $view = new classes\view\ProductView();
   $html = $view->handleForm($productTypeInstance);
   
   echo $html;

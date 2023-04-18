@@ -1,7 +1,11 @@
 <?php
-    
+
+namespace classes\controller;
+use classes\model\Product;
+use classes\model\ProductTypeInterface;
+
 class ProductController extends Product{
-  public function addProduct(ProductControllerInterface $productType, $sku, $name, $price, ...$params) {
+  public function addProduct(ProductTypeInterface $productType, $sku, $name, $price, ...$params) {
     $productType->setProduct($sku, $name, $price, ...$params);
   }
 

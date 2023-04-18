@@ -86,21 +86,19 @@ $(document).ready(function () {
       formIsValid = false;
     } else {
       switch (productType) {
-        case "DvdView":
+        case "classes\\model\\Dvd":
           size = $("#size").val();
           validateNumeric(size, "#size");
-          productType = "DvdController";
           properties.push(size);
           break;
 
-        case "BookView":
+        case "classes\\model\\Book":
           weight = $("#weight").val();
           validateNumeric(weight, "#weight");
-          productType = "BookController";
           properties.push(weight);
           break;
 
-        case "FurnitureView":
+        case "classes\\model\\Furniture":
           height = $("#height").val();
           width = $("#width").val();
           length = $("#length").val();
@@ -111,7 +109,6 @@ $(document).ready(function () {
             validateNumeric(property, propertyId);
             properties.push(property);
           });
-          productType = "FurnitureController";
           break;
       }
       removeFeedback("#productType");

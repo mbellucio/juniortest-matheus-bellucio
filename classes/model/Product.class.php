@@ -1,5 +1,6 @@
 <?php
 
+namespace classes\model; 
 abstract class Product extends Dbh{
   private $sku;
   private $name; 
@@ -47,7 +48,7 @@ abstract class Product extends Dbh{
     $this->productsToDelete = $productsToDelete; 
   }
 
-  protected function fechtAllProducts() {
+  protected function fetchAllProducts() {
     $sql = "SELECT * FROM products";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute();

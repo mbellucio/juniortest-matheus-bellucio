@@ -3,7 +3,7 @@
 ?>
 
 <?php
-  $view = new ProductView(); 
+  $view = new classes\view\ProductView(); 
   $query = $view->showAllProducts(); 
 ?>
 

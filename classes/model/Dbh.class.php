@@ -1,5 +1,8 @@
 <?php
-    
+
+namespace classes\model; 
+
+use PDO; 
 class Dbh {
   private $host = "localhost";
   private $user = "root";
