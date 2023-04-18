@@ -41,8 +41,8 @@
         <h5 class="form-label">Type Switcher</h5>
         <select name="productType" id="productType" class="form-default-input form-select">
           <option value="" disabled selected>Select a product type</option>
-          <option value="DvdView" id="DVD" >DVD</option>
-          <option value="BookView" id="Furniture" >Book</option>
+          <option value="DvdView" id="DVD">DVD</option>
+          <option value="BookView" id="Furniture">Book</option>
           <option value="FurnitureView" id="Book">Furniture</option>
         </select>
         <span id="productType-feedback"></span>
