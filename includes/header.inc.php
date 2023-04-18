@@ -19,8 +19,16 @@
 
 <body>
 
-<div class="header-box">
-  <h2 class="header-text">MATHEUS BELLUCIO'S TEST ASSIGNMENT</h2>
+<div class="header-box container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a href="https://github.com/mbellucio/juniortest-matheus-bellucio"><i class="fa-brands fa-github fa-2xl header-icons"></i></a>
+        <h2 class="header-text">MATHEUS BELLUCIO'S TEST ASSIGNMENT</h2>
+        <a href="https://bitbucket.org/mbelluciocodingworkspace/scandiweb-test-assignment/src/main/"><i class="fa-brands fa-bitbucket fa-2xl header-icons"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

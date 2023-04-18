@@ -14,14 +14,35 @@ body {
 .header-box {
   padding: 10px;
   background-color: #0e5e6f;
-  display: flex;
   justify-content: center;
+  display: flex;
+  text-align: center;
 }
 
 .header-text {
   color: #ede4e0;
   font-size: 18px;
   margin: 0;
+  display: inline-block;
+}
+
+/* .icon-box {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+} */
+
+.header-icons {
+  color: #ede4e0;
+  scale: 90%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.header-icons:hover {
+  color: #3a8891;
 }
 
 /* ================== Footer ================= */
